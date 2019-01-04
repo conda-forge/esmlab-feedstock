@@ -1,14 +1,13 @@
 {% set name = "esmlab" %}
-{% set version = "0.0.1" %}
+{% set version = "2019.1.0" %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://github.com/NCAR/esmlab/archive/v{{ version }}.tar.gz
-  sha256: b2782c0bb90cb7f12ba378a5ea6b4928bb9819bf1102fc4f5c9af7e016871014
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: b76ca706f99abf15e9274aaad630bdf65d7cef279067fb9ab81dbd4d48864047
   
 
 build: 
