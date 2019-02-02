@@ -1,5 +1,5 @@
 {% set name = "esmlab" %}
-{% set version = "2019.1.0" %}
+{% set version = "2019.2.0" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b76ca706f99abf15e9274aaad630bdf65d7cef279067fb9ab81dbd4d48864047
+  sha256: 395d146889e8e3e84cd0f5e1ea989f8b38043dd7f95e08f33edfe1efd8a3b38f
   
 
 build: 
@@ -52,3 +52,5 @@ extra:
   recipe-maintainers:
     - andersy005
     - kmpaul
+    - jukent
+    - matt-long
