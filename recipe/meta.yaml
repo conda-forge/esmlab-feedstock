@@ -27,6 +27,8 @@ requirements:
     - cftime
     - dask
     - netcdf4
+    - esmpy
+    - xesmf
 
 test:
   source_files:
