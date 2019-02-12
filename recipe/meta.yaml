@@ -36,7 +36,8 @@ test:
   imports:
     - esmlab
   commands:
-    - pytest --verbose
+    - pytest -v tests/test_climatology.py
+    - pytest -v tests/test_statistics.py
 
 about:
   
