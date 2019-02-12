@@ -1,5 +1,5 @@
 {% set name = "esmlab" %}
-{% set version = "2019.2.0" %}
+{% set version = "2019.2.1" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 395d146889e8e3e84cd0f5e1ea989f8b38043dd7f95e08f33edfe1efd8a3b38f
+  sha256: 4182f1c85246e203cbd8e031e55e90b0dfa5ec8f70227e70de8495ccf824680d
   
 
 build: 
@@ -27,6 +27,8 @@ requirements:
     - cftime
     - dask
     - netcdf4
+    - esmpy
+    - xesmf
 
 test:
   source_files:
@@ -36,7 +38,8 @@ test:
   imports:
     - esmlab
   commands:
-    - pytest --verbose
+    - pytest -v tests/test_climatology.py
+    - pytest -v tests/test_statistics.py
 
 about:
   
