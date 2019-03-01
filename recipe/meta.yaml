@@ -38,9 +38,11 @@ test:
   imports:
     - esmlab
   commands:
-    - pytest -v tests/
+    - pytest -v tests/test_climatology.py
+    - pytest -v tests/test_statistics.py
+    - pytest -v tests/test_datasets.py
+    - pytest -v tests/utils
     
-
 about:
   
   home: https://github.com/NCAR/esmlab
