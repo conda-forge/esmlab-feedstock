@@ -36,7 +36,7 @@ requirements:
 test:
   imports:
     - esmlab
-    - from esmlab import config
+    - esmlab import config
     
 about:
   
