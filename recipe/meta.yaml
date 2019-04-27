@@ -1,5 +1,5 @@
 {% set name = "esmlab" %}
-{% set version = "2019.3.16" %}
+{% set version = "2019.4.27" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9d58c2cb4e3686f884edf60d5da49f2fb53961a4969d203b953dcfc0f2a8bb16
+  sha256: 2a9b583e20491ec4509ee32c8230dee80969f6c99837e441073738a235876f72
   
 
 build: 
@@ -18,11 +18,14 @@ build:
 requirements:
 
   host:
-    - python
+    - python >3.5
     - pip
+    - setuptools_scm
+    - setuptools_scm_git_archive
+    
 
   run:
-    - python
+    - python >3.5
     - xarray
     - cftime
     - dask
@@ -31,17 +34,9 @@ requirements:
     - xesmf
 
 test:
-  source_files:
-    - tests
-  requires:
-    - pytest
   imports:
     - esmlab
-  commands:
-    - pytest -v tests/test_climatology.py
-    - pytest -v tests/test_statistics.py
-    - pytest -v tests/test_datasets.py
-    - pytest -v tests/utils
+    - from esmlab import config
     
 about:
   
@@ -59,3 +54,4 @@ extra:
     - kmpaul
     - jukent
     - matt-long
+ 
