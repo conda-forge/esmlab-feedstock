@@ -6,26 +6,26 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 2a9b583e20491ec4509ee32c8230dee80969f6c99837e441073738a235876f72
   
 
 build: 
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   noarch: python
-  number: 0
+  number: 1
 
 requirements:
 
   host:
-    - python >3.5
+    - python {{ python_min }}
     - pip
     - setuptools_scm
     - setuptools_scm_git_archive
     
 
   run:
-    - python >3.5
+    - python >={{ python_min }}
     - xarray
     - cftime
     - dask
@@ -34,6 +34,8 @@ requirements:
     - xesmf
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - esmlab
     - esmlab.config
